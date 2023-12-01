@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text-to-Speech</title>
+  <style>
+    button {
+      height: 40px;
+      background-color: black;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="convertToSpeech()">Click me Anam</button>
+  <script>
+    function convertToSpeech() {
+      var text = "Hello, Anam i heard december 5 is your birthday ? if it is correct ? can we celebrate your birthday ? I will come to their OR ? you can come to here ? we will celebrate your birthday ? and take permission from your daddy and mummy ";
+
+      if ('speechSynthesis' in window) {
+        var utterance = new SpeechSynthesisUtterance(text);
+        speechSynthesis.speak(utterance);
+      } else {
+        alert('Speech synthesis not supported in your browser.');
+      }
+    }
+
+    // Auto-convert on page load (optional)
+    // window.onload = convertToSpeech;
+
+
+  </script>
+
+</body>
+</html>
